@@ -1,0 +1,13 @@
+/* ── AnimatedCounter ─────────────────────────────── */
+
+.animated-counter {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #49C8FF, #2D8CCB);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}

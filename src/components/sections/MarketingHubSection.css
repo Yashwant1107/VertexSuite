@@ -1,0 +1,206 @@
+/* ============================================
+   MARKETING HUB — Digital Funnel
+   ============================================ */
+
+.marketing-hub-section {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+  background: var(--bg-darker);
+}
+
+.marketing-hub-inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketing-hub-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4xl);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 var(--space-xl);
+}
+
+/* Left — info */
+.marketing-hub-info {
+  flex: 1;
+  max-width: 420px;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.marketing-hub-info .section-title {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+.marketing-hub-info p {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+}
+
+/* Right — funnel */
+.marketing-hub-funnel-wrapper {
+  flex: 0 0 auto;
+  position: relative;
+  width: 400px;
+  height: 520px;
+}
+
+/* Funnel SVG */
+.funnel-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.funnel-stage {
+  transition: opacity 0.3s ease;
+}
+
+.funnel-stage-fill {
+  opacity: 0.15;
+  transition: opacity 0.5s ease;
+}
+
+.funnel-stage-fill.active {
+  opacity: 1;
+}
+
+.funnel-stage-stroke {
+  fill: none;
+  stroke-width: 1.5;
+  opacity: 0.3;
+}
+
+/* Funnel stage labels */
+.funnel-labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.funnel-label {
+  position: absolute;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.funnel-label-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.funnel-label-stat {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.funnel-label-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--accent-cyan);
+}
+
+.funnel-label--awareness {
+  top: 8%;
+  right: -140px;
+}
+
+.funnel-label--consideration {
+  top: 32%;
+  right: -130px;
+}
+
+.funnel-label--conversion {
+  top: 56%;
+  right: -120px;
+}
+
+.funnel-label--loyalty {
+  top: 80%;
+  right: -110px;
+}
+
+/* Particles */
+.funnel-particles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.funnel-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  opacity: 0;
+  box-shadow: 0 0 6px rgba(73, 200, 255, 0.5);
+}
+
+/* Glow at loyalty stage */
+.funnel-loyalty-glow {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(73, 200, 255, 0.3), transparent 70%);
+  filter: blur(20px);
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .marketing-hub-layout {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .marketing-hub-info {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .marketing-hub-funnel-wrapper {
+    width: 300px;
+    height: 400px;
+  }
+
+  .funnel-label {
+    right: -100px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .marketing-hub-funnel-wrapper {
+    width: 240px;
+    height: 340px;
+  }
+
+  .funnel-label {
+    display: none;
+  }
+}

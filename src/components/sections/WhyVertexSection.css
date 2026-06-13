@@ -1,0 +1,245 @@
+/* ============================================
+   WHY VERTEX — Holographic Command Center
+   ============================================ */
+
+.why-vertex-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(45, 140, 203, 0.08) 0%, transparent 70%),
+    var(--bg-dark);
+  padding: var(--space-5xl) 0;
+  overflow: hidden;
+}
+
+/* Section header */
+.why-vertex-header {
+  text-align: center;
+  margin-bottom: var(--space-4xl);
+}
+
+.why-vertex-header .section-title {
+  font-size: var(--text-4xl);
+}
+
+/* Metrics grid */
+.why-vertex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* Metric card */
+.why-vertex-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  text-align: center;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: default;
+  will-change: transform;
+}
+
+.why-vertex-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(73, 200, 255, 0.2);
+  box-shadow: 0 0 40px rgba(73, 200, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Glowing accent borders (each card different shade) */
+.why-vertex-card:nth-child(1) {
+  border-top: 2px solid rgba(73, 200, 255, 0.4);
+}
+
+.why-vertex-card:nth-child(2) {
+  border-top: 2px solid rgba(45, 140, 203, 0.5);
+}
+
+.why-vertex-card:nth-child(3) {
+  border-top: 2px solid rgba(168, 215, 244, 0.4);
+}
+
+.why-vertex-card:nth-child(4) {
+  border-top: 2px solid rgba(18, 86, 159, 0.6);
+}
+
+/* Holographic scan-line effect */
+.why-vertex-card::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(73, 200, 255, 0.03) 40%,
+    rgba(73, 200, 255, 0.06) 50%,
+    rgba(73, 200, 255, 0.03) 60%,
+    transparent 100%
+  );
+  animation: holoScan 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.why-vertex-card:nth-child(2)::before { animation-delay: 1s; }
+.why-vertex-card:nth-child(3)::before { animation-delay: 2s; }
+.why-vertex-card:nth-child(4)::before { animation-delay: 3s; }
+
+@keyframes holoScan {
+  0% { top: -100%; }
+  100% { top: 200%; }
+}
+
+/* Card icon */
+.why-vertex-card-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-lg);
+  border-radius: var(--radius-md);
+  background: rgba(73, 200, 255, 0.08);
+  border: 1px solid rgba(73, 200, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Card metric value */
+.why-vertex-card-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+}
+
+.why-vertex-card-value .counter-number {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.why-vertex-card-suffix {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--text-xl);
+}
+
+/* Card label */
+.why-vertex-card-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.why-vertex-card-sublabel {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Integration logos marquee */
+.why-vertex-marquee-wrapper {
+  margin-top: var(--space-5xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.why-vertex-marquee-wrapper::before,
+.why-vertex-marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.why-vertex-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-dark), transparent);
+}
+
+.why-vertex-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--bg-dark), transparent);
+}
+
+.why-vertex-marquee {
+  display: flex;
+  gap: var(--space-xl);
+  animation: marqueeScroll 30s linear infinite;
+  width: fit-content;
+}
+
+.why-vertex-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.why-vertex-marquee-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.why-vertex-marquee-item:hover {
+  background: rgba(73, 200, 255, 0.08);
+  border-color: rgba(73, 200, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.why-vertex-marquee-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-vertex-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .why-vertex-card {
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .why-vertex-card-value {
+    font-size: var(--text-3xl);
+  }
+}

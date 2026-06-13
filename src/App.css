@@ -1,0 +1,25 @@
+/* ============================================
+   App — Root Layout
+   ============================================ */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Persistent 3D Canvas Background */
+.canvas-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: var(--z-background);
+  pointer-events: none;
+}
+
+/* Main content sits above the canvas */
+.main-content {
+  position: relative;
+  z-index: var(--z-base);
+}

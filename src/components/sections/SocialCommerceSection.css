@@ -1,0 +1,354 @@
+/* ============================================
+   SOCIAL COMMERCE — WhatsApp Chat Animation
+   ============================================ */
+
+.social-commerce-section {
+  position: relative;
+  width: 100%;
+  height: 400vh;
+  background: var(--bg-dark);
+}
+
+.social-commerce-inner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-commerce-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4xl);
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 var(--space-xl);
+}
+
+/* Left side — section info */
+.social-commerce-info {
+  flex: 1;
+  max-width: 440px;
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.social-commerce-info .section-title {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--space-lg);
+}
+
+.social-commerce-info p {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+}
+
+/* Right side — phone mockup */
+.social-commerce-phone-wrapper {
+  flex: 0 0 auto;
+}
+
+.phone-mockup {
+  width: 320px;
+  height: 620px;
+  background: #111;
+  border-radius: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  position: relative;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(73, 200, 255, 0.1);
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Phone notch */
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 28px;
+  background: #111;
+  border-radius: 0 0 20px 20px;
+  z-index: 10;
+}
+
+/* WhatsApp header */
+.phone-header {
+  background: #075E54;
+  padding: 36px 16px 12px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.phone-header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.phone-header-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.phone-header-status {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Chat area */
+.phone-chat {
+  background: #0B141A;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(73, 200, 255, 0.03) 0%, transparent 50%);
+  height: calc(100% - 60px);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  overflow-y: auto;
+}
+
+/* Chat messages */
+.chat-msg {
+  max-width: 85%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(15px) scale(0.95);
+  will-change: transform, opacity;
+}
+
+.chat-msg--incoming {
+  background: #1F2C34;
+  color: rgba(255, 255, 255, 0.9);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg--outgoing {
+  background: #005C4B;
+  color: rgba(255, 255, 255, 0.9);
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg-time {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Typing indicator */
+.chat-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  background: #1F2C34;
+  border-radius: 12px;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  opacity: 0;
+}
+
+.chat-typing-dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.chat-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+
+/* Product cards */
+.chat-product-cards {
+  display: flex;
+  gap: var(--space-sm);
+  align-self: flex-end;
+  max-width: 90%;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.chat-product-card {
+  background: #1F2C34;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.chat-product-img {
+  width: 100%;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(73, 200, 255, 0.15), rgba(45, 140, 203, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.chat-product-name {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--white);
+  padding: 6px 8px 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-product-price {
+  font-size: 0.6rem;
+  color: var(--accent-cyan);
+  padding: 0 8px 6px;
+  font-weight: 600;
+}
+
+/* Buy button */
+.chat-buy-btn {
+  background: #25D366;
+  color: var(--white);
+  border: none;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  align-self: flex-end;
+  opacity: 0;
+  transform: scale(0.8);
+  cursor: pointer;
+}
+
+/* Checkout summary */
+.chat-checkout {
+  background: #1F2C34;
+  border-radius: 12px;
+  padding: var(--space-md);
+  align-self: flex-end;
+  max-width: 85%;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.chat-checkout-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+}
+
+.chat-checkout-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3px 0;
+}
+
+.chat-checkout-row:last-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 6px;
+  margin-top: 4px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Order confirmed */
+.chat-confirmed {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.05));
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  text-align: center;
+  align-self: center;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.chat-confirmed-emoji {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.chat-confirmed-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #25D366;
+}
+
+.chat-confirmed-order {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+}
+
+/* Confetti particles */
+.chat-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  opacity: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .social-commerce-layout {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .social-commerce-info {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .phone-mockup {
+    width: 280px;
+    height: 540px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phone-mockup {
+    width: 260px;
+    height: 500px;
+  }
+}

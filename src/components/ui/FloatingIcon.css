@@ -1,0 +1,28 @@
+/* ── FloatingIcon ────────────────────────────────── */
+
+.floating-icon {
+  display: inline-flex;
+  animation-name: floatBob;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  will-change: transform;
+}
+
+@keyframes floatBob {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1.2deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
