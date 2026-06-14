@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MagneticButton from '../ui/MagneticButton';
+import vertexLogo from '../../assets/vertex-logo.png';
 import './Navbar.css';
 
 const navLinks = [
@@ -43,19 +44,7 @@ export default function Navbar() {
       <nav className="navbar-inner">
         {/* Logo */}
         <Link to="/" className="navbar-logo" onClick={closeMobile}>
-          <svg className="navbar-logo-img" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Simplified Vertex triangle logo */}
-            <defs>
-              <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#A8D7F4" />
-                <stop offset="50%" stopColor="#2D8CCB" />
-                <stop offset="100%" stopColor="#12569F" />
-              </linearGradient>
-            </defs>
-            <path d="M20 2 L38 36 L2 36 Z" stroke="url(#logoGrad)" strokeWidth="3" fill="none" strokeLinejoin="round"/>
-            <path d="M20 12 L30 32 L10 32 Z" stroke="url(#logoGrad)" strokeWidth="2" fill="none" strokeLinejoin="round" opacity="0.6"/>
-            <path d="M20 20 L25 30 L15 30 Z" fill="url(#logoGrad)" opacity="0.3"/>
-          </svg>
+          <img src={vertexLogo} alt="Vertex Suite" className="navbar-logo-img" />
           <span className="navbar-logo-text">
             Vertex<span>Suite</span>
           </span>
@@ -76,10 +65,8 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="navbar-actions">
-          <MagneticButton strength={0.25}>
-            <a href="#contact" className="navbar-cta">
-              Book Demo
-            </a>
+          <MagneticButton strength={0.25} className="navbar-cta-magnetic">
+            <span className="navbar-cta-text">Book Demo</span>
           </MagneticButton>
 
           {/* Mobile Toggle */}

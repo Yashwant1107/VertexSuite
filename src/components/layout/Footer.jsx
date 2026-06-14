@@ -1,3 +1,4 @@
+import vertexLogo from '../../assets/vertex-logo.png';
 import './Footer.css';
 
 export default function Footer() {
@@ -10,18 +11,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-brand">
             <a href="/" className="footer-logo">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="footerLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#A8D7F4" />
-                    <stop offset="50%" stopColor="#2D8CCB" />
-                    <stop offset="100%" stopColor="#12569F" />
-                  </linearGradient>
-                </defs>
-                <path d="M20 2 L38 36 L2 36 Z" stroke="url(#footerLogoGrad)" strokeWidth="3" fill="none" strokeLinejoin="round"/>
-                <path d="M20 12 L30 32 L10 32 Z" stroke="url(#footerLogoGrad)" strokeWidth="2" fill="none" strokeLinejoin="round" opacity="0.6"/>
-                <path d="M20 20 L25 30 L15 30 Z" fill="url(#footerLogoGrad)" opacity="0.3"/>
-              </svg>
+              <img src={vertexLogo} alt="Vertex Suite" style={{ width: 32, height: 32, objectFit: 'contain' }} />
               <span className="footer-logo-text">
                 Vertex<span>Suite</span>
               </span>

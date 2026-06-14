@@ -2,15 +2,19 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import amazonLogo from '../../assets/logo-amazon.png';
+import flipkartLogo from '../../assets/logo-flipkart.png';
+import shopifyLogo from '../../assets/logo-shopify.png';
+import woocommerceLogo from '../../assets/logo-woocommerce.png';
 import './MarketplaceSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const platforms = [
-  { id: 'amazon', label: 'Amazon', letter: 'A', cls: 'marketplace-logo--amazon', color: '#FF9900', x: '12%', y: '18%', rot: -15 },
-  { id: 'flipkart', label: 'Flipkart', letter: 'F', cls: 'marketplace-logo--flipkart', color: '#2874F0', x: '78%', y: '22%', rot: 12 },
-  { id: 'shopify', label: 'Shopify', letter: 'S', cls: 'marketplace-logo--shopify', color: '#96BF48', x: '20%', y: '72%', rot: 10 },
-  { id: 'woocommerce', label: 'WooCommerce', letter: 'W', cls: 'marketplace-logo--woocommerce', color: '#96588A', x: '75%', y: '68%', rot: -8 },
+  { id: 'amazon', label: 'Amazon', logo: amazonLogo, x: '12%', y: '18%', rot: -15 },
+  { id: 'flipkart', label: 'Flipkart', logo: flipkartLogo, x: '78%', y: '22%', rot: 12 },
+  { id: 'shopify', label: 'Shopify', logo: shopifyLogo, x: '20%', y: '72%', rot: 10 },
+  { id: 'woocommerce', label: 'WooCommerce', logo: woocommerceLogo, x: '75%', y: '68%', rot: -8 },
 ];
 
 export default function MarketplaceSection() {
@@ -123,14 +127,14 @@ export default function MarketplaceSection() {
           {platforms.map((p) => (
             <div
               key={p.id}
-              className={`marketplace-logo ${p.cls}`}
+              className="marketplace-logo"
               style={{
                 left: p.x,
                 top: p.y,
                 transform: `rotate(${p.rot}deg)`,
               }}
             >
-              {p.letter}
+              <img src={p.logo} alt={p.label} className="marketplace-logo-img" />
               <span className="marketplace-logo-label">{p.label}</span>
             </div>
           ))}
@@ -149,9 +153,8 @@ export default function MarketplaceSection() {
               <div
                 key={p.id}
                 className="marketplace-dashboard-icon"
-                style={{ background: `linear-gradient(135deg, ${p.color}, ${p.color}cc)` }}
               >
-                {p.letter}
+                <img src={p.logo} alt={p.label} className="marketplace-dashboard-icon-img" />
               </div>
             ))}
           </div>

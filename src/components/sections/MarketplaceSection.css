@@ -61,6 +61,7 @@
   height: 90px;
   border-radius: var(--radius-lg);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
@@ -172,22 +173,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 800;
   color: var(--white);
   opacity: 0;
   transform: scale(0);
 }
 
+.marketplace-dashboard-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Message at end */
 .marketplace-message {
   position: absolute;
-  bottom: 12%;
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   max-width: 600px;
+  width: 90%;
   z-index: 5;
   opacity: 0;
   padding: 0 var(--space-xl);
@@ -197,6 +201,7 @@
   font-size: var(--text-lg);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
+  max-width: 100%;
 }
 
 /* Responsive */

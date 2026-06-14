@@ -52,6 +52,7 @@
   width: 36px;
   height: 36px;
   object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(73, 200, 255, 0.3));
 }
 
 .navbar-logo-text {
@@ -111,6 +112,28 @@
   display: flex;
   align-items: center;
   gap: var(--space-md);
+}
+
+.navbar-cta-magnetic {
+  padding: 10px 24px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  border: none;
+  box-shadow: 0 2px 12px rgba(45, 140, 203, 0.3);
+}
+
+.navbar-cta-magnetic:hover {
+  box-shadow: 0 4px 20px rgba(73, 200, 255, 0.4);
+}
+
+.navbar-cta-text {
+  color: var(--white);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .navbar-cta {
