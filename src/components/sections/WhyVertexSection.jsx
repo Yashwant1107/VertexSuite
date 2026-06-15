@@ -72,24 +72,32 @@ export default function WhyVertexSection() {
       ease: 'power2.out',
       scrollTrigger: {
         trigger: section,
-        start: 'top 70%',
-        toggleActions: 'play none none reverse',
+        start: 'top 85%',
+        once: true,
       },
     });
 
     // Cards stagger in
-    gsap.from(cards, {
-      y: 60,
-      opacity: 0,
-      duration: 0.7,
-      stagger: 0.15,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: section,
-        start: 'top 50%',
-        toggleActions: 'play none none reverse',
+    gsap.fromTo(
+      cards,
+      {
+        y: 60,
+        opacity: 0
       },
-    });
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.15,
+        ease: "power2.out",
+        clearProps: "transform,opacity",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 75%",
+          once: true,
+        }
+      }
+    );
 
     // Animate numeric counters
     cards.forEach((card) => {
@@ -106,8 +114,8 @@ export default function WhyVertexSection() {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 75%',
-          toggleActions: 'play none none reverse',
+          start: 'top 85%',
+          once: true,
         },
         onUpdate: () => {
           counterEl.textContent = Math.round(obj.val);

@@ -250,3 +250,38 @@
     width: 340px;
   }
 }
+@media (max-width: 768px) {
+
+  .marketplace-header{
+    top: 3%;
+    padding: 0 24px;
+    z-index: 10;
+  }
+
+  .marketplace-dashboard{
+    top: 62%;
+    width: 92%;
+  }
+
+  .marketplace-section{
+    height: 340vh;
+  }
+
+}
+@media (max-width: 768px){
+
+  .shared-inbox-header{
+    top: 3%;
+    padding: 0 20px;
+  }
+
+  .shared-inbox-card{
+    top: 62%;
+    width: 92%;
+  }
+
+  .shared-inbox-section{
+    height: 340vh;
+  }
+
+}

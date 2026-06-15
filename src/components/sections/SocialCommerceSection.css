@@ -127,9 +127,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  overflow-y: auto;
-}
+  overflow: hidden;
 
+}
+.chat-content{
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-sm);
+  will-change:transform;
+}
 /* Chat messages */
 .chat-msg {
   max-width: 85%;
@@ -355,4 +361,54 @@
     width: 260px;
     height: 480px;
   }
+}
+@media (max-width: 768px) {
+
+  .social-commerce-layout{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 20px;
+  }
+
+  .social-commerce-info{
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .social-commerce-info .section-title{
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .social-commerce-info p{
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .phone-mockup{
+    width: 220px;
+    height: 430px;
+    margin-bottom: 0;
+  }
+
+  .phone-header{
+    padding: 28px 12px 10px;
+  }
+
+  .phone-chat{
+    padding: 10px;
+  }
+
+  .chat-msg{
+    font-size: 0.72rem;
+  }
+
+  .chat-product-card{
+    width: 90px;
+  }
+
 }

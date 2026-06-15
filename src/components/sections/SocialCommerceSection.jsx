@@ -26,6 +26,7 @@ export default function SocialCommerceSection() {
     const buyBtn = inner.querySelector('.chat-buy-btn');
     const checkout = inner.querySelector('.chat-checkout');
     const confirmed = inner.querySelector('.chat-confirmed');
+    const chatContent = inner.querySelector('.chat-content');
     const confettiPieces = inner.querySelectorAll('.confetti-piece');
 
     const tl = gsap.timeline({
@@ -52,7 +53,11 @@ export default function SocialCommerceSection() {
     tl.to(typingEls[1], { opacity: 0, duration: 0.02 }, 0.28);
     tl.to(msg2, { opacity: 1, y: 0, scale: 1, duration: 0.04 }, 0.30);
     tl.to(productCards, { opacity: 1, y: 0, duration: 0.06 }, 0.34);
-
+    tl.to(chatContent, {
+      y: -350,
+      duration: 0.25,
+      ease: 'none'
+    }, 0.35);
     // Phase 3 (0.4-0.6): Customer reply + Buy button
     tl.to(msg3, { opacity: 1, y: 0, scale: 1, duration: 0.04 }, 0.44);
     tl.to(buyBtn, { opacity: 1, scale: 1, duration: 0.05, ease: 'back.out(1.7)' }, 0.52);
@@ -81,6 +86,7 @@ export default function SocialCommerceSection() {
         y: `+=${30 + Math.random() * 40}`,
         duration: 0.06,
       }, 0.95);
+
     });
 
   }, { scope: sectionRef });
@@ -115,93 +121,95 @@ export default function SocialCommerceSection() {
 
               {/* Chat area */}
               <div className="phone-chat">
-                {/* Typing indicator 1 */}
-                <div className="chat-typing">
-                  <div className="chat-typing-dot" />
-                  <div className="chat-typing-dot" />
-                  <div className="chat-typing-dot" />
-                </div>
-
-                {/* Message 1 — incoming */}
-                <div className="chat-msg chat-msg--incoming chat-msg--m1">
-                  Hi! I saw your product on Instagram 👀
-                  <div className="chat-msg-time">10:32 AM</div>
-                </div>
-
-                {/* Typing indicator 2 */}
-                <div className="chat-typing">
-                  <div className="chat-typing-dot" />
-                  <div className="chat-typing-dot" />
-                  <div className="chat-typing-dot" />
-                </div>
-
-                {/* Message 2 — outgoing */}
-                <div className="chat-msg chat-msg--outgoing chat-msg--m2">
-                  Hey! Here are our bestsellers 🛍️
-                  <div className="chat-msg-time">10:33 AM</div>
-                </div>
-
-                {/* Product cards */}
-                <div className="chat-product-cards">
-                  <div className="chat-product-card">
-                    <div className="chat-product-img">👕</div>
-                    <div className="chat-product-name">Classic Blue Tee</div>
-                    <div className="chat-product-price">₹899</div>
+                <div className="chat-content">
+                  {/* Typing indicator 1 */}
+                  <div className="chat-typing">
+                    <div className="chat-typing-dot" />
+                    <div className="chat-typing-dot" />
+                    <div className="chat-typing-dot" />
                   </div>
-                  <div className="chat-product-card">
-                    <div className="chat-product-img">👟</div>
-                    <div className="chat-product-name">Sport Sneakers</div>
-                    <div className="chat-product-price">₹2,499</div>
+
+                  {/* Message 1 — incoming */}
+                  <div className="chat-msg chat-msg--incoming chat-msg--m1">
+                    Hi! I saw your product on Instagram 👀
+                    <div className="chat-msg-time">10:32 AM</div>
                   </div>
-                </div>
 
-                {/* Message 3 — incoming */}
-                <div className="chat-msg chat-msg--incoming chat-msg--m3">
-                  I want the Blue one! 💙
-                  <div className="chat-msg-time">10:34 AM</div>
-                </div>
-
-                {/* Buy button */}
-                <button className="chat-buy-btn">🛒 Buy Now — ₹899</button>
-
-                {/* Checkout summary */}
-                <div className="chat-checkout">
-                  <div className="chat-checkout-title">📋 Order Summary</div>
-                  <div className="chat-checkout-row">
-                    <span>Classic Blue Tee × 1</span>
-                    <span>₹899</span>
+                  {/* Typing indicator 2 */}
+                  <div className="chat-typing">
+                    <div className="chat-typing-dot" />
+                    <div className="chat-typing-dot" />
+                    <div className="chat-typing-dot" />
                   </div>
-                  <div className="chat-checkout-row">
-                    <span>Shipping</span>
-                    <span>FREE</span>
-                  </div>
-                  <div className="chat-checkout-row">
-                    <span>Total</span>
-                    <span>₹899</span>
-                  </div>
-                </div>
 
-                {/* Order confirmed */}
-                <div className="chat-confirmed">
-                  <div className="chat-confirmed-emoji">✅</div>
-                  <div className="chat-confirmed-text">Order Confirmed!</div>
-                  <div className="chat-confirmed-order">Order #VTX-20260613-1847</div>
+                  {/* Message 2 — outgoing */}
+                  <div className="chat-msg chat-msg--outgoing chat-msg--m2">
+                    Hey! Here are our bestsellers 🛍️
+                    <div className="chat-msg-time">10:33 AM</div>
+                  </div>
 
-                  {/* Confetti */}
-                  <div className="chat-confetti">
-                    {confettiColors.map((color, i) =>
-                      Array.from({ length: 3 }, (_, j) => (
-                        <div
-                          key={`${i}-${j}`}
-                          className="confetti-piece"
-                          style={{
-                            background: color,
-                            left: '50%',
-                            top: '50%',
-                          }}
-                        />
-                      ))
-                    )}
+                  {/* Product cards */}
+                  <div className="chat-product-cards">
+                    <div className="chat-product-card">
+                      <div className="chat-product-img">👕</div>
+                      <div className="chat-product-name">Classic Blue Tee</div>
+                      <div className="chat-product-price">₹899</div>
+                    </div>
+                    <div className="chat-product-card">
+                      <div className="chat-product-img">👟</div>
+                      <div className="chat-product-name">Sport Sneakers</div>
+                      <div className="chat-product-price">₹2,499</div>
+                    </div>
+                  </div>
+
+                  {/* Message 3 — incoming */}
+                  <div className="chat-msg chat-msg--incoming chat-msg--m3">
+                    I want the Blue one! 💙
+                    <div className="chat-msg-time">10:34 AM</div>
+                  </div>
+
+                  {/* Buy button */}
+                  <button className="chat-buy-btn">🛒 Buy Now — ₹899</button>
+
+                  {/* Checkout summary */}
+                  <div className="chat-checkout">
+                    <div className="chat-checkout-title">📋 Order Summary</div>
+                    <div className="chat-checkout-row">
+                      <span>Classic Blue Tee × 1</span>
+                      <span>₹899</span>
+                    </div>
+                    <div className="chat-checkout-row">
+                      <span>Shipping</span>
+                      <span>FREE</span>
+                    </div>
+                    <div className="chat-checkout-row">
+                      <span>Total</span>
+                      <span>₹899</span>
+                    </div>
+                  </div>
+
+                  {/* Order confirmed */}
+                  <div className="chat-confirmed">
+                    <div className="chat-confirmed-emoji">✅</div>
+                    <div className="chat-confirmed-text">Order Confirmed!</div>
+                    <div className="chat-confirmed-order">Order #VTX-20260613-1847</div>
+
+                    {/* Confetti */}
+                    <div className="chat-confetti">
+                      {confettiColors.map((color, i) =>
+                        Array.from({ length: 3 }, (_, j) => (
+                          <div
+                            key={`${i}-${j}`}
+                            className="confetti-piece"
+                            style={{
+                              background: color,
+                              left: '50%',
+                              top: '50%',
+                            }}
+                          />
+                        ))
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

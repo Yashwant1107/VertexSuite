@@ -243,3 +243,31 @@
     font-size: var(--text-3xl);
   }
 }
+@media (max-width:768px){
+
+  .why-vertex-grid{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    max-width:100%;
+    padding:0 20px;
+  }
+
+  .why-vertex-card{
+    width:100%;
+    min-height:220px;
+  }
+
+  .why-vertex-section{
+    padding-bottom:120px;
+  }
+
+}
+@media (max-width:768px){
+
+  .why-vertex-card{
+    opacity:1 !important;
+    transform:none !important;
+  }
+
+}

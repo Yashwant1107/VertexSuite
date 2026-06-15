@@ -11,10 +11,10 @@ import './MarketplaceSection.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const platforms = [
-  { id: 'amazon', label: 'Amazon', logo: amazonLogo, x: '12%', y: '18%', rot: -15 },
-  { id: 'flipkart', label: 'Flipkart', logo: flipkartLogo, x: '78%', y: '22%', rot: 12 },
-  { id: 'shopify', label: 'Shopify', logo: shopifyLogo, x: '20%', y: '72%', rot: 10 },
-  { id: 'woocommerce', label: 'WooCommerce', logo: woocommerceLogo, x: '75%', y: '68%', rot: -8 },
+  { id: 'amazon', label: 'Amazon', logo: amazonLogo, x: '12%', y: '35%', rot: -15 },
+  { id: 'flipkart', label: 'Flipkart', logo: flipkartLogo, x: '78%', y: '32%', rot: 12 },
+  { id: 'shopify', label: 'Shopify', logo: shopifyLogo, x: '20%', y: '70%', rot: 10 },
+  { id: 'woocommerce', label: 'WooCommerce', logo: woocommerceLogo, x: '72%', y: '68%', rot: -8 },
 ];
 
 export default function MarketplaceSection() {

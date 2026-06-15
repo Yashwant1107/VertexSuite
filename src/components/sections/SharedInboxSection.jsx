@@ -14,7 +14,7 @@ const messages = [
     sender: 'Sarah M.',
     preview: 'Hey! Love this product, is it available?',
     time: '2m ago',
-    x: '8%', y: '20%', rot: -8,
+    x: '8%', y: '35%', rot: -8,
   },
   {
     id: 'whatsapp',
@@ -23,7 +23,7 @@ const messages = [
     sender: 'Raj K.',
     preview: 'Can you send me the catalog?',
     time: '5m ago',
-    x: '62%', y: '15%', rot: 5,
+    x: '62%', y: '30%', rot: 5,
   },
   {
     id: 'messenger',
@@ -41,7 +41,7 @@ const messages = [
     sender: 'orders@store.com',
     preview: 'New bulk order request from...',
     time: '18m ago',
-    x: '65%', y: '70%', rot: -10,
+    x: '60%', y: '68%', rot: -10,
   },
 ];
 
